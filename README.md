@@ -4,7 +4,9 @@
 
 This repository introduces a novel, model-agnostic Explainable AI (XAI) framework tailored specifically for audio classification tasks. It features three specialized architectures: RISE-SPEC, RISE-WAVE, and RISE-AUDIO which consistently outperform traditional baseline XAI methods, including RISE, LIME, and Grad-CAM.
 
-<img src="Thesis_Results/RISE_Audio_Architecture.png" width="600" alt="Alt text" style="border: 2px solid black;">
+<p style="display:inline-block; border: 2px solid black;">
+  <img src="Thesis_Results/RISE_Audio_Architecture.png" width="600" alt="Alt text">
+</p>
 
 ## XAI Evaluation on ESC-50
 
