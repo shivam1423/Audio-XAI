@@ -1,0 +1,20 @@
+# Core scientific stack
+numpy>=1.23
+scipy>=1.10
+pandas>=1.5
+matplotlib>=3.7
+tqdm>=4.65
+
+# Deep-learning
+torch>=2.0          # installs CPU build; add +cu11x / +rocm if you need GPU wheels
+torchvision>=0.15   # matches the Torch major version
+
+# Machine-learning helpers
+scikit-learn>=1.3
+
+# Audio processing
+librosa>=0.10
+
+# ... existing code ...
+Pillow>=10.0        # used by utils.audio_to_mel_spectrogram_image
+scikit-image>=0.19,<0.22  # provides skimage.transform.resize in explanations.py (0.19–0.21 work)

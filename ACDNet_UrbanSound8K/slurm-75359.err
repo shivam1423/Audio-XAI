@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/beegfs/work_fast/pandey/Thesis/RISE_dev/ACDNet_UrbanSound8K/scripts/evaluate.py", line 112, in main
+    results = evaluate_model(config, args.model_path, args.output_dir)
+  File "/beegfs/work_fast/pandey/Thesis/RISE_dev/ACDNet_UrbanSound8K/evaluation/evaluator.py", line 255, in evaluate_model
+    results = evaluator.evaluate()
+  File "/beegfs/work_fast/pandey/Thesis/RISE_dev/ACDNet_UrbanSound8K/evaluation/evaluator.py", line 168, in evaluate
+    'n_samples': len(self.test_dataset),
+AttributeError: 'ACDNetEvaluator' object has no attribute 'test_dataset'

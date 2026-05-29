@@ -1,0 +1,12 @@
+experiment:
+  output_dir: "results/"
+  device: "cuda"
+
+masking:
+  type: "mel"              # options: time, freq, rect, mel, all
+  num_masks: 6000
+  soft_masking: "gaussian" # options: gaussian, bilinear, none
+
+occlusion:
+  method: "mean"           # options: mean, black
+  granularity: "time"      # options: time, freq, rect, mel, all

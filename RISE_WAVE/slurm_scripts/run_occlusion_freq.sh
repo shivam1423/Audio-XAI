@@ -1,0 +1,30 @@
+#!/bin/bash
+#SBATCH --job-name=rise_freq
+#SBATCH --partition=gpu
+#SBATCH --cpus-per-task=2
+#SBATCH --gres=gpu:1080:1
+#SBATCH --mem=20000M
+#SBATCH --time=8-08:00:00
+
+# Load modules
+#module load anaconda/3-5.0.1
+#module load cuda/11.1
+
+# Extra output
+nvidia-smi
+echo -e "Node: $(hostname)"
+echo -e "Job internal GPU id(s): $CUDA_VISIBLE_DEVICES"
+echo -e "Job external GPU id(s): ${SLURM_JOB_GPUS}"
+
+# Execute programs
+
+
+#srun python -m cli --mask_type freq --soft_masking gaussian --occlusion time
+srun python -m cli --mask_type freq --soft_masking gaussian --occlusion freq
+
+#srun python -m cli --mask_type freq --soft_masking bilinear --occlusion time
+srun python -m cli --mask_type freq --soft_masking bilinear --occlusion freq
+
+srun python -m cli --mask_type freq --soft_masking none --occlusion time
+srun python -m cli --mask_type freq --soft_masking none --occlusion freq
+

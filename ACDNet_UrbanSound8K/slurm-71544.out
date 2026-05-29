@@ -1,0 +1,132 @@
+Wed Jan 21 13:20:55 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.195.03             Driver Version: 570.195.03     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce GTX 1080 Ti     Off |   00000000:89:00.0 Off |                  N/A |
+| 23%   33C    P8              8W /  250W |       3MiB /  11264MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+Node: gpu02
+Job internal GPU id(s): 0
+Job external GPU id(s): 5
+
+==========================================
+ACDNet Training on UrbanSound8K
+==========================================
+Data Directory: ../UrbanSound8K
+Output Directory: ./trained_models
+Results Directory: ./results
+Device: cuda
+Batch Size: 32
+Epochs: 120
+Learning Rate: 0.1
+Random Seed: 42
+==========================================
+
+Starting training...
+
+/beegfs/work_fast/pandey/anaconda3/envs/rise_audio/lib/python3.9/site-packages/librosa/util/files.py:10: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+Random seed set to: 42
+creating trainer
+Using device: cuda
+
+Loading datasets...
+Loaded UrbanSound8K dataset:
+  - Folds: [1, 2, 3, 4, 5, 6, 7, 8]
+  - Total samples: 7079
+  - Classes: 10
+  - Sample rate: 20000 Hz
+  - Input length: 30000 samples (1.5s)
+Loaded UrbanSound8K dataset:
+  - Folds: [9]
+  - Total samples: 816
+  - Classes: 10
+  - Sample rate: 20000 Hz
+  - Input length: 30000 samples (1.5s)
+Loaded UrbanSound8K dataset:
+  - Folds: [10]
+  - Total samples: 837
+  - Classes: 10
+  - Sample rate: 20000 Hz
+  - Input length: 30000 samples (1.5s)
+
+Initializing BC Learning generator...
+BC Learning Generator initialized with 7079 samples
+
+Initializing ACDNet model...
+Model Parameters: 4,712,378
+Model Size: 17.98 MB
+
+======================================================================
+Starting ACDNet Training on UrbanSound8K
+======================================================================
++------------------------------------------------------------+
+| ACDNet UrbanSound8K Configuration
++------------------------------------------------------------+
+| Dataset        : urbansound8k
+| Data Directory : ../UrbanSound8K
+| Num Classes    : 10
+| Sample Rate    : 20000 Hz
+| Input Length   : 30000 samples (1.5s)
+| Batch Size     : 32
+| Epochs         : 120
+| Learning Rate  : 0.1
+| LR Schedule    : [0.33, 0.67]
+| Weight Decay   : 0.0005
+| Momentum       : 0.9
+| Train Folds    : [1, 2, 3, 4, 5, 6, 7, 8]
+| Val Fold       : 9
+| Test Fold      : 10
+| BC Learning    : True
+| Strong Augment : True
+| Device         : cuda
++------------------------------------------------------------+
+======================================================================
+
+
+Error during training: Calculated padded input size per channel: (30000 x 1). Kernel size: (1 x 9). Kernel size can't be greater than actual input size
+Traceback (most recent call last):
+  File "/beegfs/work_fast/pandey/Thesis/RISE_dev/ACDNet_UrbanSound8K/scripts/train.py", line 134, in main
+    train_history, val_history = trainer.train()
+  File "/beegfs/work_fast/pandey/Thesis/RISE_dev/ACDNet_UrbanSound8K/training/trainer.py", line 263, in train
+    train_loss, train_acc = self.train_epoch(epoch)
+  File "/beegfs/work_fast/pandey/Thesis/RISE_dev/ACDNet_UrbanSound8K/training/trainer.py", line 134, in train_epoch
+    outputs = self.model(x)
+  File "/beegfs/work_fast/pandey/anaconda3/envs/rise_audio/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/beegfs/work_fast/pandey/anaconda3/envs/rise_audio/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/beegfs/work_fast/pandey/Thesis/RISE_dev/ACDNet_UrbanSound8K/models/acdnet.py", line 125, in forward
+    x = self.sfeb(x)
+  File "/beegfs/work_fast/pandey/anaconda3/envs/rise_audio/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/beegfs/work_fast/pandey/anaconda3/envs/rise_audio/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/beegfs/work_fast/pandey/anaconda3/envs/rise_audio/lib/python3.9/site-packages/torch/nn/modules/container.py", line 215, in forward
+    input = module(input)
+  File "/beegfs/work_fast/pandey/anaconda3/envs/rise_audio/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/beegfs/work_fast/pandey/anaconda3/envs/rise_audio/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/beegfs/work_fast/pandey/anaconda3/envs/rise_audio/lib/python3.9/site-packages/torch/nn/modules/conv.py", line 460, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/beegfs/work_fast/pandey/anaconda3/envs/rise_audio/lib/python3.9/site-packages/torch/nn/modules/conv.py", line 456, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: Calculated padded input size per channel: (30000 x 1). Kernel size: (1 x 9). Kernel size can't be greater than actual input size
+srun: error: gpu02: task 0: Exited with exit code 1
+
+ERROR: Training failed

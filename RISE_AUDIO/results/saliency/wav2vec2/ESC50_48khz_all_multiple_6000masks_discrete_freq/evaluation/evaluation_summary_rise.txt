@@ -1,0 +1,10 @@
+=== AUDIO SALIENCY MAP EVALUATION ===
+
+Mean Insertion AUC: 0.9847
+Mean Deletion AUC: 0.1874
+Number of audio files evaluated: 1
+
+Detailed Results:
+Audio Name	Insertion AUC	Deletion AUC
+--------------------------------------------------
+1-47819-A-5	0.9847	0.1874

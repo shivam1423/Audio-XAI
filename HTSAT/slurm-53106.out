@@ -1,0 +1,134 @@
+Mon Dec  1 06:32:33 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.195.03             Driver Version: 570.195.03     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce GTX 1080 Ti     Off |   00000000:04:00.0 Off |                  N/A |
+| 23%   26C    P8              9W /  250W |       3MiB /  11264MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Node: gpu03
+Job internal GPU id(s): 0
+Job external GPU id(s): 0
+==========================================
+HTSAT Evaluation on ESC-50
+==========================================
+Checkpoint: HTSAT_ESC_exp=1_fold=1_acc=0.985.ckpt
+Audio Directory: ../ESC50/audio
+Validation Fold: 2
+Training Folds: 1, 3, 4, 5
+Batch Size: 32
+Device: cuda
+Output Directory: ./results_fold2
+==========================================
+
+/beegfs/work_fast/pandey/anaconda3/envs/rise_audio/lib/python3.9/site-packages/torch/utils/data/dataloader.py:557: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+Using device: cuda
+
+============================================================
+HTSAT EVALUATION ON ESC-50
+============================================================
+Checkpoint: HTSAT_ESC_exp=1_fold=1_acc=0.985.ckpt
+Audio directory: ../ESC50/audio
+Validation fold: 2
+Training folds: [1, 3, 4, 5]
+Batch size: 32
+Device: cuda
+============================================================
+
+Loading HTSAT model...
+Warning: Strict loading failed: Error(s) in loading state_dict for HTSAT:
+	Missing key(s) in state_dict: "patch_embed.proj.weight", "patch_embed.proj.bias", "stages.0.blocks.0.norm1.weight", "stages.0.blocks.0.norm1.bias", "stages.0.blocks.0.attn.in_proj_weight", "stages.0.blocks.0.attn.in_proj_bias", "stages.0.blocks.0.attn.out_proj.weight", "stages.0.blocks.0.attn.out_proj.bias", "stages.0.blocks.0.norm2.weight", "stages.0.blocks.0.norm2.bias", "stages.0.blocks.0.mlp.0.weight", "stages.0.blocks.0.mlp.0.bias", "stages.0.blocks.0.mlp.2.weight", "stages.0.blocks.0.mlp.2.bias", "stages.0.blocks.1.norm1.weight", "stages.0.blocks.1.norm1.bias", "stages.0.blocks.1.attn.in_proj_weight", "stages.0.blocks.1.attn.in_proj_bias", "stages.0.blocks.1.attn.out_proj.weight", "stages.0.blocks.1.attn.out_proj.bias", "stages.0.blocks.1.norm2.weight", "stages.0.blocks.1.norm2.bias", "stages.0.blocks.1.mlp.0.weight", "stages.0.blocks.1.mlp.0.bias", "stages.0.blocks.1.mlp.2.weight", "stages.0.blocks.1.mlp.2.bias", "stages.1.weight", "stages.1.bias", "stages.2.blocks.0.norm1.weight", "stages.2.blocks.0.norm1.bias", "stages.2.blocks.0.attn.in_proj_weight", "stages.2.blocks.0.attn.in_proj_bias", "stages.2.blocks.0.attn.out_proj.weight", "stages.2.blocks.0.attn.out_proj.bias", "stages.2.blocks.0.norm2.weight", "stages.2.blocks.0.norm2.bias", "stages.2.blocks.0.mlp.0.weight", "stages.2.blocks.0.mlp.0.bias", "stages.2.blocks.0.mlp.2.weight", "stages.2.blocks.0.mlp.2.bias", "stages.2.blocks.1.norm1.weight", "stages.2.blocks.1.norm1.bias", "stages.2.blocks.1.attn.in_proj_weight", "stages.2.blocks.1.attn.in_proj_bias", "stages.2.blocks.1.attn.out_proj.weight", "stages.2.blocks.1.attn.out_proj.bias", "stages.2.blocks.1.norm2.weight", "stages.2.blocks.1.norm2.bias", "stages.2.blocks.1.mlp.0.weight", "stages.2.blocks.1.mlp.0.bias", "stages.2.blocks.1.mlp.2.weight", "stages.2.blocks.1.mlp.2.bias", "stages.3.weight", "stages.3.bias", "stages.4.blocks.0.norm1.weight", "stages.4.blocks.0.norm1.bias", "stages.4.blocks.0.attn.in_proj_weight", "stages.4.blocks.0.attn.in_proj_bias", "stages.4.blocks.0.attn.out_proj.weight", "stages.4.blocks.0.attn.out_proj.bias", "stages.4.blocks.0.norm2.weight", "stages.4.blocks.0.norm2.bias", "stages.4.blocks.0.mlp.0.weight", "stages.4.blocks.0.mlp.0.bias", "stages.4.blocks.0.mlp.2.weight", "stages.4.blocks.0.mlp.2.bias", "stages.4.blocks.1.norm1.weight", "stages.4.blocks.1.norm1.bias", "stages.4.blocks.1.attn.in_proj_weight", "stages.4.blocks.1.attn.in_proj_bias", "stages.4.blocks.1.attn.out_proj.weight", "stages.4.blocks.1.attn.out_proj.bias", "stages.4.blocks.1.norm2.weight", "stages.4.blocks.1.norm2.bias", "stages.4.blocks.1.mlp.0.weight", "stages.4.blocks.1.mlp.0.bias", "stages.4.blocks.1.mlp.2.weight", "stages.4.blocks.1.mlp.2.bias", "stages.4.blocks.2.norm1.weight", "stages.4.blocks.2.norm1.bias", "stages.4.blocks.2.attn.in_proj_weight", "stages.4.blocks.2.attn.in_proj_bias", "stages.4.blocks.2.attn.out_proj.weight", "stages.4.blocks.2.attn.out_proj.bias", "stages.4.blocks.2.norm2.weight", "stages.4.blocks.2.norm2.bias", "stages.4.blocks.2.mlp.0.weight", "stages.4.blocks.2.mlp.0.bias", "stages.4.blocks.2.mlp.2.weight", "stages.4.blocks.2.mlp.2.bias", "stages.4.blocks.3.norm1.weight", "stages.4.blocks.3.norm1.bias", "stages.4.blocks.3.attn.in_proj_weight", "stages.4.blocks.3.attn.in_proj_bias", "stages.4.blocks.3.attn.out_proj.weight", "stages.4.blocks.3.attn.out_proj.bias", "stages.4.blocks.3.norm2.weight", "stages.4.blocks.3.norm2.bias", "stages.4.blocks.3.mlp.0.weight", "stages.4.blocks.3.mlp.0.bias", "stages.4.blocks.3.mlp.2.weight", "stages.4.blocks.3.mlp.2.bias", "stages.4.blocks.4.norm1.weight", "stages.4.blocks.4.norm1.bias", "stages.4.blocks.4.attn.in_proj_weight", "stages.4.blocks.4.attn.in_proj_bias", "stages.4.blocks.4.attn.out_proj.weight", "stages.4.blocks.4.attn.out_proj.bias", "stages.4.blocks.4.norm2.weight", "stages.4.blocks.4.norm2.bias", "stages.4.blocks.4.mlp.0.weight", "stages.4.blocks.4.mlp.0.bias", "stages.4.blocks.4.mlp.2.weight", "stages.4.blocks.4.mlp.2.bias", "stages.4.blocks.5.norm1.weight", "stages.4.blocks.5.norm1.bias", "stages.4.blocks.5.attn.in_proj_weight", "stages.4.blocks.5.attn.in_proj_bias", "stages.4.blocks.5.attn.out_proj.weight", "stages.4.blocks.5.attn.out_proj.bias", "stages.4.blocks.5.norm2.weight", "stages.4.blocks.5.norm2.bias", "stages.4.blocks.5.mlp.0.weight", "stages.4.blocks.5.mlp.0.bias", "stages.4.blocks.5.mlp.2.weight", "stages.4.blocks.5.mlp.2.bias", "stages.5.weight", "stages.5.bias", "stages.6.blocks.0.norm1.weight", "stages.6.blocks.0.norm1.bias", "stages.6.blocks.0.attn.in_proj_weight", "stages.6.blocks.0.attn.in_proj_bias", "stages.6.blocks.0.attn.out_proj.weight", "stages.6.blocks.0.attn.out_proj.bias", "stages.6.blocks.0.norm2.weight", "stages.6.blocks.0.norm2.bias", "stages.6.blocks.0.mlp.0.weight", "stages.6.blocks.0.mlp.0.bias", "stages.6.blocks.0.mlp.2.weight", "stages.6.blocks.0.mlp.2.bias", "stages.6.blocks.1.norm1.weight", "stages.6.blocks.1.norm1.bias", "stages.6.blocks.1.attn.in_proj_weight", "stages.6.blocks.1.attn.in_proj_bias", "stages.6.blocks.1.attn.out_proj.weight", "stages.6.blocks.1.attn.out_proj.bias", "stages.6.blocks.1.norm2.weight", "stages.6.blocks.1.norm2.bias", "stages.6.blocks.1.mlp.0.weight", "stages.6.blocks.1.mlp.0.bias", "stages.6.blocks.1.mlp.2.weight", "stages.6.blocks.1.mlp.2.bias", "norm.weight", "norm.bias", "head.weight", "head.bias". 
+	Unexpected key(s) in state_dict: "sed_model.spectrogram_extractor.stft.conv_real.weight", "sed_model.spectrogram_extractor.stft.conv_imag.weight", "sed_model.logmel_extractor.melW", "sed_model.bn0.weight", "sed_model.bn0.bias", "sed_model.bn0.running_mean", "sed_model.bn0.running_var", "sed_model.bn0.num_batches_tracked", "sed_model.patch_embed.proj.weight", "sed_model.patch_embed.proj.bias", "sed_model.patch_embed.norm.weight", "sed_model.patch_embed.norm.bias", "sed_model.layers.0.blocks.0.norm1.weight", "sed_model.layers.0.blocks.0.norm1.bias", "sed_model.layers.0.blocks.0.attn.relative_position_bias_table", "sed_model.layers.0.blocks.0.attn.relative_position_index", "sed_model.layers.0.blocks.0.attn.qkv.weight", "sed_model.layers.0.blocks.0.attn.qkv.bias", "sed_model.layers.0.blocks.0.attn.proj.weight", "sed_model.layers.0.blocks.0.attn.proj.bias", "sed_model.layers.0.blocks.0.norm2.weight", "sed_model.layers.0.blocks.0.norm2.bias", "sed_model.layers.0.blocks.0.mlp.fc1.weight", "sed_model.layers.0.blocks.0.mlp.fc1.bias", "sed_model.layers.0.blocks.0.mlp.fc2.weight", "sed_model.layers.0.blocks.0.mlp.fc2.bias", "sed_model.layers.0.blocks.1.attn_mask", "sed_model.layers.0.blocks.1.norm1.weight", "sed_model.layers.0.blocks.1.norm1.bias", "sed_model.layers.0.blocks.1.attn.relative_position_bias_table", "sed_model.layers.0.blocks.1.attn.relative_position_index", "sed_model.layers.0.blocks.1.attn.qkv.weight", "sed_model.layers.0.blocks.1.attn.qkv.bias", "sed_model.layers.0.blocks.1.attn.proj.weight", "sed_model.layers.0.blocks.1.attn.proj.bias", "sed_model.layers.0.blocks.1.norm2.weight", "sed_model.layers.0.blocks.1.norm2.bias", "sed_model.layers.0.blocks.1.mlp.fc1.weight", "sed_model.layers.0.blocks.1.mlp.fc1.bias", "sed_model.layers.0.blocks.1.mlp.fc2.weight", "sed_model.layers.0.blocks.1.mlp.fc2.bias", "sed_model.layers.0.downsample.reduction.weight", "sed_model.layers.0.downsample.norm.weight", "sed_model.layers.0.downsample.norm.bias", "sed_model.layers.1.blocks.0.norm1.weight", "sed_model.layers.1.blocks.0.norm1.bias", "sed_model.layers.1.blocks.0.attn.relative_position_bias_table", "sed_model.layers.1.blocks.0.attn.relative_position_index", "sed_model.layers.1.blocks.0.attn.qkv.weight", "sed_model.layers.1.blocks.0.attn.qkv.bias", "sed_model.layers.1.blocks.0.attn.proj.weight", "sed_model.layers.1.blocks.0.attn.proj.bias", "sed_model.layers.1.blocks.0.norm2.weight", "sed_model.layers.1.blocks.0.norm2.bias", "sed_model.layers.1.blocks.0.mlp.fc1.weight", "sed_model.layers.1.blocks.0.mlp.fc1.bias", "sed_model.layers.1.blocks.0.mlp.fc2.weight", "sed_model.layers.1.blocks.0.mlp.fc2.bias", "sed_model.layers.1.blocks.1.attn_mask", "sed_model.layers.1.blocks.1.norm1.weight", "sed_model.layers.1.blocks.1.norm1.bias", "sed_model.layers.1.blocks.1.attn.relative_position_bias_table", "sed_model.layers.1.blocks.1.attn.relative_position_index", "sed_model.layers.1.blocks.1.attn.qkv.weight", "sed_model.layers.1.blocks.1.attn.qkv.bias", "sed_model.layers.1.blocks.1.attn.proj.weight", "sed_model.layers.1.blocks.1.attn.proj.bias", "sed_model.layers.1.blocks.1.norm2.weight", "sed_model.layers.1.blocks.1.norm2.bias", "sed_model.layers.1.blocks.1.mlp.fc1.weight", "sed_model.layers.1.blocks.1.mlp.fc1.bias", "sed_model.layers.1.blocks.1.mlp.fc2.weight", "sed_model.layers.1.blocks.1.mlp.fc2.bias", "sed_model.layers.1.downsample.reduction.weight", "sed_model.layers.1.downsample.norm.weight", "sed_model.layers.1.downsample.norm.bias", "sed_model.layers.2.blocks.0.norm1.weight", "sed_model.layers.2.blocks.0.norm1.bias", "sed_model.layers.2.blocks.0.attn.relative_position_bias_table", "sed_model.layers.2.blocks.0.attn.relative_position_index", "sed_model.layers.2.blocks.0.attn.qkv.weight", "sed_model.layers.2.blocks.0.attn.qkv.bias", "sed_model.layers.2.blocks.0.attn.proj.weight", "sed_model.layers.2.blocks.0.attn.proj.bias", "sed_model.layers.2.blocks.0.norm2.weight", "sed_model.layers.2.blocks.0.norm2.bias", "sed_model.layers.2.blocks.0.mlp.fc1.weight", "sed_model.layers.2.blocks.0.mlp.fc1.bias", "sed_model.layers.2.blocks.0.mlp.fc2.weight", "sed_model.layers.2.blocks.0.mlp.fc2.bias", "sed_model.layers.2.blocks.1.attn_mask", "sed_model.layers.2.blocks.1.norm1.weight", "sed_model.layers.2.blocks.1.norm1.bias", "sed_model.layers.2.blocks.1.attn.relative_position_bias_table", "sed_model.layers.2.blocks.1.attn.relative_position_index", "sed_model.layers.2.blocks.1.attn.qkv.weight", "sed_model.layers.2.blocks.1.attn.qkv.bias", "sed_model.layers.2.blocks.1.attn.proj.weight", "sed_model.layers.2.blocks.1.attn.proj.bias", "sed_model.layers.2.blocks.1.norm2.weight", "sed_model.layers.2.blocks.1.norm2.bias", "sed_model.layers.2.blocks.1.mlp.fc1.weight", "sed_model.layers.2.blocks.1.mlp.fc1.bias", "sed_model.layers.2.blocks.1.mlp.fc2.weight", "sed_model.layers.2.blocks.1.mlp.fc2.bias", "sed_model.layers.2.blocks.2.norm1.weight", "sed_model.layers.2.blocks.2.norm1.bias", "sed_model.layers.2.blocks.2.attn.relative_position_bias_table", "sed_model.layers.2.blocks.2.attn.relative_position_index", "sed_model.layers.2.blocks.2.attn.qkv.weight", "sed_model.layers.2.blocks.2.attn.qkv.bias", "sed_model.layers.2.blocks.2.attn.proj.weight", "sed_model.layers.2.blocks.2.attn.proj.bias", "sed_model.layers.2.blocks.2.norm2.weight", "sed_model.layers.2.blocks.2.norm2.bias", "sed_model.layers.2.blocks.2.mlp.fc1.weight", "sed_model.layers.2.blocks.2.mlp.fc1.bias", "sed_model.layers.2.blocks.2.mlp.fc2.weight", "sed_model.layers.2.blocks.2.mlp.fc2.bias", "sed_model.layers.2.blocks.3.attn_mask", "sed_model.layers.2.blocks.3.norm1.weight", "sed_model.layers.2.blocks.3.norm1.bias", "sed_model.layers.2.blocks.3.attn.relative_position_bias_table", "sed_model.layers.2.blocks.3.attn.relative_position_index", "sed_model.layers.2.blocks.3.attn.qkv.weight", "sed_model.layers.2.blocks.3.attn.qkv.bias", "sed_model.layers.2.blocks.3.attn.proj.weight", "sed_model.layers.2.blocks.3.attn.proj.bias", "sed_model.layers.2.blocks.3.norm2.weight", "sed_model.layers.2.blocks.3.norm2.bias", "sed_model.layers.2.blocks.3.mlp.fc1.weight", "sed_model.layers.2.blocks.3.mlp.fc1.bias", "sed_model.layers.2.blocks.3.mlp.fc2.weight", "sed_model.layers.2.blocks.3.mlp.fc2.bias", "sed_model.layers.2.blocks.4.norm1.weight", "sed_model.layers.2.blocks.4.norm1.bias", "sed_model.layers.2.blocks.4.attn.relative_position_bias_table", "sed_model.layers.2.blocks.4.attn.relative_position_index", "sed_model.layers.2.blocks.4.attn.qkv.weight", "sed_model.layers.2.blocks.4.attn.qkv.bias", "sed_model.layers.2.blocks.4.attn.proj.weight", "sed_model.layers.2.blocks.4.attn.proj.bias", "sed_model.layers.2.blocks.4.norm2.weight", "sed_model.layers.2.blocks.4.norm2.bias", "sed_model.layers.2.blocks.4.mlp.fc1.weight", "sed_model.layers.2.blocks.4.mlp.fc1.bias", "sed_model.layers.2.blocks.4.mlp.fc2.weight", "sed_model.layers.2.blocks.4.mlp.fc2.bias", "sed_model.layers.2.blocks.5.attn_mask", "sed_model.layers.2.blocks.5.norm1.weight", "sed_model.layers.2.blocks.5.norm1.bias", "sed_model.layers.2.blocks.5.attn.relative_position_bias_table", "sed_model.layers.2.blocks.5.attn.relative_position_index", "sed_model.layers.2.blocks.5.attn.qkv.weight", "sed_model.layers.2.blocks.5.attn.qkv.bias", "sed_model.layers.2.blocks.5.attn.proj.weight", "sed_model.layers.2.blocks.5.attn.proj.bias", "sed_model.layers.2.blocks.5.norm2.weight", "sed_model.layers.2.blocks.5.norm2.bias", "sed_model.layers.2.blocks.5.mlp.fc1.weight", "sed_model.layers.2.blocks.5.mlp.fc1.bias", "sed_model.layers.2.blocks.5.mlp.fc2.weight", "sed_model.layers.2.blocks.5.mlp.fc2.bias", "sed_model.layers.2.downsample.reduction.weight", "sed_model.layers.2.downsample.norm.weight", "sed_model.layers.2.downsample.norm.bias", "sed_model.layers.3.blocks.0.norm1.weight", "sed_model.layers.3.blocks.0.norm1.bias", "sed_model.layers.3.blocks.0.attn.relative_position_bias_table", "sed_model.layers.3.blocks.0.attn.relative_position_index", "sed_model.layers.3.blocks.0.attn.qkv.weight", "sed_model.layers.3.blocks.0.attn.qkv.bias", "sed_model.layers.3.blocks.0.attn.proj.weight", "sed_model.layers.3.blocks.0.attn.proj.bias", "sed_model.layers.3.blocks.0.norm2.weight", "sed_model.layers.3.blocks.0.norm2.bias", "sed_model.layers.3.blocks.0.mlp.fc1.weight", "sed_model.layers.3.blocks.0.mlp.fc1.bias", "sed_model.layers.3.blocks.0.mlp.fc2.weight", "sed_model.layers.3.blocks.0.mlp.fc2.bias", "sed_model.layers.3.blocks.1.norm1.weight", "sed_model.layers.3.blocks.1.norm1.bias", "sed_model.layers.3.blocks.1.attn.relative_position_bias_table", "sed_model.layers.3.blocks.1.attn.relative_position_index", "sed_model.layers.3.blocks.1.attn.qkv.weight", "sed_model.layers.3.blocks.1.attn.qkv.bias", "sed_model.layers.3.blocks.1.attn.proj.weight", "sed_model.layers.3.blocks.1.attn.proj.bias", "sed_model.layers.3.blocks.1.norm2.weight", "sed_model.layers.3.blocks.1.norm2.bias", "sed_model.layers.3.blocks.1.mlp.fc1.weight", "sed_model.layers.3.blocks.1.mlp.fc1.bias", "sed_model.layers.3.blocks.1.mlp.fc2.weight", "sed_model.layers.3.blocks.1.mlp.fc2.bias", "sed_model.norm.weight", "sed_model.norm.bias", "sed_model.tscam_conv.weight", "sed_model.tscam_conv.bias", "sed_model.head.weight", "sed_model.head.bias". 
+Attempting to load with strict=False...
+Model loaded from HTSAT_ESC_exp=1_fold=1_acc=0.985.ckpt
+Checkpoint epoch: 50
+
+Loading validation data (fold 2)...
+Loaded 400 samples from ESC-50
+Folds: [2]
+Classes: 50
+Validation samples: 400
+
+Evaluating model...
+Evaluation:   0%|          | 0/13 [00:00<?, ?it/s]Evaluation:   8%|▊         | 1/13 [00:02<00:30,  2.54s/it]Evaluation:  38%|███▊      | 5/13 [00:04<00:05,  1.44it/s]Evaluation:  69%|██████▉   | 9/13 [00:05<00:02,  1.98it/s]Evaluation: 100%|██████████| 13/13 [00:05<00:00,  3.17it/s]Evaluation: 100%|██████████| 13/13 [00:05<00:00,  2.25it/s]
+/beegfs/work_fast/pandey/anaconda3/envs/rise_audio/lib/python3.9/site-packages/numpy/lib/function_base.py:520: RuntimeWarning: Mean of empty slice.
+  avg = a.mean(axis, **keepdims_kw)
+/beegfs/work_fast/pandey/anaconda3/envs/rise_audio/lib/python3.9/site-packages/numpy/core/_methods.py:129: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+
+Error in forward pass for batch 0: stft input and window must be on the same device but got self on cuda:0 and window on cpu
+Waveform shape: torch.Size([32, 320000])
+
+Error in forward pass for batch 1: stft input and window must be on the same device but got self on cuda:0 and window on cpu
+Waveform shape: torch.Size([32, 320000])
+
+Error in forward pass for batch 2: stft input and window must be on the same device but got self on cuda:0 and window on cpu
+Waveform shape: torch.Size([32, 320000])
+
+Error in forward pass for batch 3: stft input and window must be on the same device but got self on cuda:0 and window on cpu
+Waveform shape: torch.Size([32, 320000])
+
+Error in forward pass for batch 4: stft input and window must be on the same device but got self on cuda:0 and window on cpu
+Waveform shape: torch.Size([32, 320000])
+
+Error in forward pass for batch 5: stft input and window must be on the same device but got self on cuda:0 and window on cpu
+Waveform shape: torch.Size([32, 320000])
+
+Error in forward pass for batch 6: stft input and window must be on the same device but got self on cuda:0 and window on cpu
+Waveform shape: torch.Size([32, 320000])
+
+Error in forward pass for batch 7: stft input and window must be on the same device but got self on cuda:0 and window on cpu
+Waveform shape: torch.Size([32, 320000])
+
+Error in forward pass for batch 8: stft input and window must be on the same device but got self on cuda:0 and window on cpu
+Waveform shape: torch.Size([32, 320000])
+
+Error in forward pass for batch 9: stft input and window must be on the same device but got self on cuda:0 and window on cpu
+Waveform shape: torch.Size([32, 320000])
+
+Error in forward pass for batch 10: stft input and window must be on the same device but got self on cuda:0 and window on cpu
+Waveform shape: torch.Size([32, 320000])
+
+Error in forward pass for batch 11: stft input and window must be on the same device but got self on cuda:0 and window on cpu
+Waveform shape: torch.Size([32, 320000])
+
+Error in forward pass for batch 12: stft input and window must be on the same device but got self on cuda:0 and window on cpu
+Waveform shape: torch.Size([16, 320000])
+
+============================================================
+EVALUATION RESULTS
+============================================================
+Total samples: 0
+Accuracy: nan%
+============================================================
+
+
+Per-Class Performance:
+------------------------------------------------------------
+Traceback (most recent call last):
+  File "/beegfs/work_fast/pandey/Thesis/RISE_dev/HTSAT/evaluate.py", line 269, in <module>
+    main()
+  File "/beegfs/work_fast/pandey/Thesis/RISE_dev/HTSAT/evaluate.py", line 240, in main
+    results = evaluate_model(
+  File "/beegfs/work_fast/pandey/Thesis/RISE_dev/HTSAT/evaluate.py", line 86, in evaluate_model
+    report = classification_report(
+  File "/beegfs/work_fast/pandey/anaconda3/envs/rise_audio/lib/python3.9/site-packages/sklearn/utils/_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+  File "/beegfs/work_fast/pandey/anaconda3/envs/rise_audio/lib/python3.9/site-packages/sklearn/metrics/_classification.py", line 2693, in classification_report
+    raise ValueError(
+ValueError: Number of classes, 0, does not match size of target_names, 50. Try specifying the labels parameter
+
+Evaluation complete! Results saved to ./results_fold2

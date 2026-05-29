@@ -1,0 +1,228 @@
+==========================================
+ResNet50 UrbanSound8K Training
+==========================================
+Job ID: 75028
+Node: gpu10
+Start time: Thu Jan 22 14:46:37 UTC 2026
+==========================================
+
+GPU Information:
+Thu Jan 22 14:46:37 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.195.03             Driver Version: 570.195.03     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA RTX PRO 6000 Blac...    On  |   00000000:61:00.0 Off |                   On |
+| N/A   45C    P0            275W /  600W |   38256MiB /  97887MiB |     N/A      Default |
+|                                         |                        |              Enabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| MIG devices:                                                                            |
++------------------+----------------------------------+-----------+-----------------------+
+| GPU  GI  CI  MIG |                     Memory-Usage |        Vol|        Shared         |
+|      ID  ID  Dev |                       BAR1-Usage | SM     Unc| CE ENC  DEC  OFA  JPG |
+|                  |                                  |        ECC|                       |
+|==================+==================================+===========+=======================|
+|  0    5   0   0  |              58MiB / 24192MiB    | 46      0 |  1   1    1    0    1 |
+|                  |                 0MiB / 32767MiB  |           |                       |
++------------------+----------------------------------+-----------+-----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+Python version:
+Python 3.9.23
+
+PyTorch version:
+2.1.0
+
+CUDA available:
+True
+
+Training Configuration:
+  Data directory: ../UrbanSound8K
+  Output directory: ./trained_models
+  Device: cuda
+  Batch size: 32
+  Epochs: 100
+  Learning rate: 0.001
+  Optimizer: sgd
+  Num workers: 4
+  Random seed: 42
+==========================================
+
+/beegfs/work_fast/pandey/anaconda3/envs/rise_audio/lib/python3.9/site-packages/librosa/util/files.py:10: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/beegfs/work_fast/pandey/anaconda3/envs/rise_audio/lib/python3.9/site-packages/torch/cuda/__init__.py:215: UserWarning: 
+NVIDIA RTX PRO 6000 Blackwell Server Edition MIG 1g.24gb with CUDA capability sm_120 is not compatible with the current PyTorch installation.
+The current PyTorch install supports CUDA capabilities sm_50 sm_60 sm_61 sm_70 sm_75 sm_80 sm_86 sm_90.
+If you want to use the NVIDIA RTX PRO 6000 Blackwell Server Edition MIG 1g.24gb GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/
+
+  warnings.warn(
+
+======================================================================
+System Information
+======================================================================
+PyTorch version: 2.1.0
+CUDA available: True
+CUDA version: 12.1
+cuDNN version: 8902
+Number of GPUs: 1
+  GPU 0: NVIDIA RTX PRO 6000 Blackwell Server Edition MIG 1g.24gb
+======================================================================
+
+✓ Random seed set to: 42
+
+Checking dataset structure in: ../UrbanSound8K
+✓ Found metadata: ../UrbanSound8K/metadata/UrbanSound8K.csv
+✓ Found 10 fold directories
++----------------------------------------------------------------------+
+| ResNet50 UrbanSound8K Configuration
++----------------------------------------------------------------------+
+| Dataset           : urbansound8k
+| Data Directory    : ../UrbanSound8K
+| Output Directory  : ./trained_models
+| Num Classes       : 10
+| Sample Rate       : 22050 Hz
+| Audio Duration    : 4.0 seconds
+| Input Length      : 88200 samples
+| Mel Spectrograms  : 128 mels, fmax=8000 Hz
+| Spec Dimensions   : 128x128
+| Model             : resnet50 (pretrained=True)
+| Batch Size        : 32
+| Epochs            : 100
+| Optimizer         : SGD
+| Learning Rate     : 0.001
+| Momentum          : 0.9
+| Weight Decay      : 0.0001
+| LR Scheduler      : plateau
+| Scheduler Patience: 10
+| Train Folds       : [1, 2, 3, 4, 5, 6, 7, 8]
+| Val Fold          : 9
+| Test Fold         : 10
+| Device            : cuda
+| Random Seed       : 42
++----------------------------------------------------------------------+
+✓ Output directories created:
+  - Models: ./trained_models
+  - Results: results
+✓ Saved configuration to: ./trained_models/config.json
+
+======================================================================
+Loading Dataset
+======================================================================
+Loaded UrbanSound8K dataset:
+  - Folds: [1, 2, 3, 4, 5, 6, 7, 8]
+  - Total samples: 7079
+  - Classes: 10
+  - Sample rate: 22050 Hz
+  - Audio duration: 4.0s
+  - Spectrogram size: 128x128
+Loaded UrbanSound8K dataset:
+  - Folds: [9]
+  - Total samples: 816
+  - Classes: 10
+  - Sample rate: 22050 Hz
+  - Audio duration: 4.0s
+  - Spectrogram size: 128x128
+Loaded UrbanSound8K dataset:
+  - Folds: [10]
+  - Total samples: 837
+  - Classes: 10
+  - Sample rate: 22050 Hz
+  - Audio duration: 4.0s
+  - Spectrogram size: 128x128
+
+✓ Dataset loaded successfully
+  - Training samples: 7079
+  - Validation samples: 816
+  - Test samples: 837
+
+======================================================================
+Creating Model
+======================================================================
+======================================================================
+Model Architecture Summary
+======================================================================
+Model: ResNet50 Audio Classifier
+Total parameters: 23,522,250
+Trainable parameters: 23,522,250
+Model size: ~89.73 MB
+
+Layer structure:
+  - Input: (batch, 1, 128, 128) - Single-channel mel spectrogram
+  - Conv1: 1 -> 64 channels
+  - ResNet Backbone: 4 residual blocks
+  - Global Average Pooling
+  - FC: 2048 -> 10 classes
+======================================================================
+
+======================================================================
+Initializing Trainer
+======================================================================
+Using device: cuda
+GPU: NVIDIA RTX PRO 6000 Blackwell Server Edition MIG 1g.24gb
+Logging to: ./trained_models/training_log_20260122_144656.csv
+
+Starting training...
+
+======================================================================
+Starting Training
+======================================================================
+Total epochs: 100
+Training batches: 222
+Validation batches: 26
+======================================================================
+
+Training:   0%|          | 0/222 [00:00<?, ?it/s]                                                 Traceback (most recent call last):
+  File "/beegfs/work_fast/pandey/Thesis/RISE_dev/Resnet50_UrbanSound8K/scripts/train.py", line 189, in main
+    train_history, val_history = trainer.train()
+  File "/beegfs/work_fast/pandey/Thesis/RISE_dev/Resnet50_UrbanSound8K/training/trainer.py", line 268, in train
+    train_loss, train_acc = self.train_epoch()
+  File "/beegfs/work_fast/pandey/Thesis/RISE_dev/Resnet50_UrbanSound8K/training/trainer.py", line 153, in train_epoch
+    output = self.model(data)
+  File "/beegfs/work_fast/pandey/anaconda3/envs/rise_audio/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/beegfs/work_fast/pandey/anaconda3/envs/rise_audio/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/beegfs/work_fast/pandey/Thesis/RISE_dev/Resnet50_UrbanSound8K/models/resnet50.py", line 79, in forward
+    return self.resnet(x)
+  File "/beegfs/work_fast/pandey/anaconda3/envs/rise_audio/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/beegfs/work_fast/pandey/anaconda3/envs/rise_audio/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/beegfs/work_fast/pandey/anaconda3/envs/rise_audio/lib/python3.9/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/beegfs/work_fast/pandey/anaconda3/envs/rise_audio/lib/python3.9/site-packages/torchvision/models/resnet.py", line 269, in _forward_impl
+    x = self.bn1(x)
+  File "/beegfs/work_fast/pandey/anaconda3/envs/rise_audio/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/beegfs/work_fast/pandey/anaconda3/envs/rise_audio/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/beegfs/work_fast/pandey/anaconda3/envs/rise_audio/lib/python3.9/site-packages/torch/nn/modules/batchnorm.py", line 151, in forward
+    self.num_batches_tracked.add_(1)  # type: ignore[has-type]
+RuntimeError: CUDA error: no kernel image is available for execution on the device
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+
+✗ Error during training: CUDA error: no kernel image is available for execution on the device
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+
+==========================================
+Training failed with exit code: 1
+End time: Thu Jan 22 14:47:19 UTC 2026
+==========================================

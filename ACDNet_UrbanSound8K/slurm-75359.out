@@ -1,0 +1,70 @@
+==========================================
+Wav2Vec2 UrbanSound8K Evaluation
+==========================================
+Job ID: 75359
+Node: gpu02
+Start time: Thu Jan 22 19:31:13 UTC 2026
+==========================================
+GPU Information:
+Thu Jan 22 19:31:13 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.195.03             Driver Version: 570.195.03     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce GTX 1080 Ti     Off |   00000000:09:00.0 Off |                  N/A |
+| 33%   50C    P2             51W /  250W |       3MiB /  11264MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+==========================================
+Using device: cuda
+
+Loading model from: ./trained_models/acdnet_us8k_best.pt
+  Checkpoint epoch: 467
+  Best val accuracy: 75.86%
+
+Loading multi-crop test data from: ./val_data/fold10_val10crop.npz
+  Loaded 8370 crops (837 samples × 10 crops)
+  test_x shape: torch.Size([8370, 1, 1, 30225])
+  test_y shape: torch.Size([8370, 10])
+
+======================================================================
+Evaluating ACDNet on UrbanSound8K Test Set
+======================================================================
+Test fold: 10
+Number of crops per sample: 10
+======================================================================
+
+Running inference on all test crops...
+  Processed 600/8370 crops (60/837 samples)
+  Processed 1200/8370 crops (120/837 samples)
+  Processed 1800/8370 crops (180/837 samples)
+  Processed 2400/8370 crops (240/837 samples)
+  Processed 3000/8370 crops (300/837 samples)
+  Processed 3600/8370 crops (360/837 samples)
+  Processed 4200/8370 crops (420/837 samples)
+  Processed 4800/8370 crops (480/837 samples)
+  Processed 5400/8370 crops (540/837 samples)
+  Processed 6000/8370 crops (600/837 samples)
+  Processed 6600/8370 crops (660/837 samples)
+  Processed 7200/8370 crops (720/837 samples)
+  Processed 7800/8370 crops (780/837 samples)
+  Processed 8370/8370 crops (837/837 samples)
+
+Averaging predictions across crops...
+
+Error during evaluation: 'ACDNetEvaluator' object has no attribute 'test_dataset'
+==========================================
+Evaluation completed!
+End time: Thu Jan 22 19:31:35 UTC 2026
+==========================================
